@@ -1,8 +1,10 @@
-# Pixi Color Effects
+# PixiJS Color Filters
 
-A various color Matrix filters for pixi.js with TON of presets!
+Various color filters for pixi.js with TON of presets!
 
-[DEMO](https://pixicoloreffects.github.io/)
+Forked off the wonderful, archived work [@pixi/color-filters](https://github.com/PixiColorEffects/@pixi/color-filters).
+
+[DEMO](https://userland.pixijs.io/color-effects/examples)
 
 ![img](./screenshot.png)
 
@@ -10,22 +12,22 @@ A various color Matrix filters for pixi.js with TON of presets!
 
 ```shell
 # npm
-npm install pixi-color-effects
+npm install @pixi/color-filters
 
 # yarn
-yarn add pixi-color-effects
+yarn add @pixi/color-filters
 ```
 
 # Usage
 
 ```typescript
-import { Tint } from "pixi-color-effects";
+import { Tint } from "@pixi/color-filters";
 
-const app = new Application({
-  // **
-});
+const app = new Application();
 
-let filter = new Tint();
+await app.init();
+
+const filter = new Tint();
 app.stage.filters = [filter];
 
 //  change value
@@ -35,29 +37,6 @@ app.ticker.add((delta) => {
   filter.value = Math.sin(num) * 1;
 });
 ```
-
-## Use Preset
-
-```typescript
-import { Preset } from "pixi-color-effects";
-let filter = new Preset("aladin");
-app.stage.filters = [filter];
-```
-
-## Methods
-
-### Methods usage
-
-```typescript
-let filter = new Tint();
-
-//  use a method
-filter.getEffectConfig();
-```
-
-| Method          | Argument |                           Description |
-| :-------------- | :------: | ------------------------------------: |
-| getEffectConfig |          | Get the filter's configuration object |
 
 # License
 

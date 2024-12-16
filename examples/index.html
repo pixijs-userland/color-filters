@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>PixiJS Color Filters</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <script type="importmap">
+      {
+        "imports": {
+          "@pixi/color-filters": "../dist/pixi-color-filters.mjs",
+          "pixi.js": "../node_modules/pixi.js/dist/pixi.mjs",
+          "lil-gui": "../node_modules/lil-gui/dist/lil-gui.esm.js"
+        }
+      }
+    </script>
+    <script src="./index.js" type="module"></script>
+    <h1 class="page-title">@pixi/color-filters</h1>
+    <div class="center">
+      <div class="playground-box">
+        <canvas id="playground"></canvas>
+
+        <div class="controls-box">
+          <label for="fileElem" id="upload">Upload an Img </label>
+          <button id="webcam">Use Webcam</button>
+        </div>
+        <input
+          type="file"
+          id="fileElem"
+          accept="image/*"
+          class="visually-hidden"
+        />
+      </div>
+  </body>
+</html>

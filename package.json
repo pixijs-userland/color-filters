@@ -1,27 +1,41 @@
 {
-  "name": "pixi-color-effects",
+  "name": "@pixi/color-filters",
   "version": "1.3.0",
-  "description": "A various color Matrix filters and Presets for pixi.js",
-  "main": "./dist/pixi-color-effects.umd.js",
-  "module": "./dist/pixi-color-effects.es.js",
-  "types": "./dist/index.d.ts",
+  "description": "Various color filters and presets for pixi.js",
+  "main": "./lib/index.js",
+  "module": "./lib/index.mjs",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    }
+  },
   "files": [
-    "dist/**/*"
+    "dist",
+    "lib"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PixiColorEffects/pixi-color-effects.git"
+    "url": "git+https://github.com/pixijs-userland/color-filters.git"
   },
-  "homepage": "https://github.com/PixiColorEffects/pixi-color-effects#readme",
+  "homepage": "https://github.com/pixijs-userland/color-filters#readme",
   "bugs": {
-    "url": "https://github.com/PixiColorEffects/pixi-color-effects/issues"
+    "url": "https://github.com/pixijs-userland/color-filters/issues"
   },
   "scripts": {
-    "serve": "vite",
-    "build": "vite build && tsc -p ./tsconfig.dist.json -emitDeclarationOnly && tsc-alias -p ./tsconfig.dist.json",
-    "buildPage": "vite build --config vite.config.page.ts",
-    "preview": "vite preview",
-    "tag": "bump --commit --tag --push"
+    "start": "xs serve",
+    "watch": "xs watch",
+    "build": "xs build",
+    "docs": "xs docs",
+    "lint": "xs lint",
+    "types": "xs types",
+    "release": "xs release",
+    "test": "xs test"
   },
   "keywords": [
     "pixijs",
@@ -30,42 +44,21 @@
   ],
   "author": "carl-jin",
   "license": "MIT",
+  "contributors": [
+    "Matt Karl <@bigtimebuddy>"
+  ],
   "devDependencies": {
-    "@jsdevtools/version-bump-prompt": "^6.1.0",
+    "@pixi/extension-scripts": "^3.0.0",
     "@types/node": "^17.0.21",
-    "fhead": "^3.2.7",
     "lil-gui": "^0.16.1",
-    "pixi.js": "^6.2.2",
-    "prettier": "^2.5.1",
-    "tsc-alias": "^1.6.3",
-    "typescript": "^4.6.2",
-    "vite": "^2.8.4",
-    "vite-plugin-string": "^1.1.2"
-  },
-  "peerDependencies": {
-    "@pixi/constants": "^6.2.2",
-    "@pixi/core": "^6.2.2",
-    "@pixi/filter-blur": "^6.2.2",
-    "@pixi/filter-color-matrix": "^6.2.2",
-    "@pixi/utils": "^6.2.2"
-  },
-  "fhead": {
-    "comment": "/** Do not use this config in production! */",
-    "root": "dist",
-    "repository": "https://github.com/PixiColorEffects/pixi-color-effects.git",
-    "patterns": [
-      ".js"
-    ],
-    "exclude": [],
-    "name": "CarlJin",
-    "email": "buffpal2016@gmail.com",
-    "license": "MIT",
-    "licenseText": "pixi-color-effects is licensed under the MIT License.",
-    "copyright": "https://github.com/PixiColorEffects/pixi-color-effects/blob/main/LICENSE",
-    "renewAll": true
+    "pixi.js": "^8.6.5",
+    "typescript": "^5.6.2"
   },
   "dependencies": {
     "@types/lodash-es": "^4.17.6",
     "lodash-es": "^4.17.21"
+  },
+  "peerDependencies": {
+    "pixi.js": ">=8 <9"
   }
 }
