@@ -7,17 +7,17 @@ uniform float uMatrix[9];
 uniform float uValue;
 
 void main(void) {
-    vec4 c11 = texture2D(uTexture, vTextureCoord - uSize);
-    vec4 c12 = texture2D(uTexture, vec2(vTextureCoord.x, vTextureCoord.y - uSize.y));
-    vec4 c13 = texture2D(uTexture, vec2(vTextureCoord.x + uSize.x, vTextureCoord.y - uSize.y));
+    vec4 c11 = texture(uTexture, vTextureCoord - uSize);
+    vec4 c12 = texture(uTexture, vec2(vTextureCoord.x, vTextureCoord.y - uSize.y));
+    vec4 c13 = texture(uTexture, vec2(vTextureCoord.x + uSize.x, vTextureCoord.y - uSize.y));
 
-    vec4 c21 = texture2D(uTexture, vec2(vTextureCoord.x - uSize.x, vTextureCoord.y) );
-    vec4 c22 = texture2D(uTexture, vTextureCoord);
-    vec4 c23 = texture2D(uTexture, vec2(vTextureCoord.x + uSize.x, vTextureCoord.y) );
+    vec4 c21 = texture(uTexture, vec2(vTextureCoord.x - uSize.x, vTextureCoord.y) );
+    vec4 c22 = texture(uTexture, vTextureCoord);
+    vec4 c23 = texture(uTexture, vec2(vTextureCoord.x + uSize.x, vTextureCoord.y) );
 
-    vec4 c31 = texture2D(uTexture, vec2(vTextureCoord.x - uSize.x, vTextureCoord.y + uSize.y) );
-    vec4 c32 = texture2D(uTexture, vec2(vTextureCoord.x, vTextureCoord.y + uSize.y) );
-    vec4 c33 = texture2D(uTexture, vTextureCoord + uSize );
+    vec4 c31 = texture(uTexture, vec2(vTextureCoord.x - uSize.x, vTextureCoord.y + uSize.y) );
+    vec4 c32 = texture(uTexture, vec2(vTextureCoord.x, vTextureCoord.y + uSize.y) );
+    vec4 c33 = texture(uTexture, vTextureCoord + uSize );
 
     vec4 color =
     c11 * uMatrix[0] + c12 * uMatrix[1] + c13 * uMatrix[2] +

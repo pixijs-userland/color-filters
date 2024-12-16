@@ -16,6 +16,6 @@ vec3 blendOverlay(vec3 base, vec3 blend, float opacity) {
 }
 
 void main() {
-    vec4 base = texture2D(uTexture, vTextureCoord.xy);
+    vec4 base = texture(uTexture, vTextureCoord.xy);
     finalColor = vec4(blendOverlay(base.rgb, color.rgb, value), base.a);
 }

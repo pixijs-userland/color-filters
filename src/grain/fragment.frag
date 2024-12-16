@@ -68,7 +68,7 @@ void main()
     vec3 rotOffset = vec3(1.425,3.892,5.835);
     vec2 rotCoordsR = coordRot(vTextureCoord, uTimer + rotOffset.x);
     vec3 noise = vec3(pnoise3D(vec3(rotCoordsR*vec2(uWidth/grainsize,uHeight/grainsize),0.0)));
-    vec4 tex = texture2D(uTexture, vTextureCoord);
+    vec4 tex = texture(uTexture, vTextureCoord);
     vec3 col = tex.rgb;
     vec3 lumcoeff = vec3(0.299,0.587,0.114);
     float luminance = mix(0.0,dot(col, lumcoeff),lumamount);

@@ -6,6 +6,6 @@ uniform float uValue;
 uniform vec4 uFillColor;
 
 void main() {
-    vec4 base = texture2D(uTexture, vTextureCoord.xy);
+    vec4 base = texture(uTexture, vTextureCoord.xy);
     finalColor = mix(base, uFillColor, uValue);
 }

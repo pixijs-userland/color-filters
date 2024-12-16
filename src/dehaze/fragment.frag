@@ -23,7 +23,7 @@ float hazeMap(vec4 base) {
 
 void main() {
 
-    lowp vec4 base = texture2D(uTexture, vTextureCoord.xy);
+    lowp vec4 base = texture(uTexture, vTextureCoord.xy);
     lowp float haze = hazeMap(base);
 
     float transmission = 1.0 - 0.95 * haze;

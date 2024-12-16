@@ -37,7 +37,7 @@ float gaussian(in float x) {
     return 1.0 - exp(-PI*2.0*x*x);
 }
 void main() {
-    lowp vec4 col = texture2D(uTexture, vTextureCoord.xy);
+    lowp vec4 col = texture(uTexture, vTextureCoord.xy);
     lowp vec3 map = col.rgb;
     vec3 base = col.rgb * matRGBtoROMM;
     float base_lum = luma(col.rgb);

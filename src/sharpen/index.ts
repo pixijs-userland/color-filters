@@ -36,7 +36,7 @@ export class Sharpen extends Filter
         const [width, height] = this.resources?.filterGlobals?.uniforms
             ?.inputSize ?? [1920, 1080];
 
-        this.uniforms.uMatrix = new Float32Array([
+        this.uniforms.uMatrix.set([
             -1, -1, -1, -1, 9, -1, -1, -1, -1,
         ]);
         this.uniforms.uSize[0] = 1 / width;

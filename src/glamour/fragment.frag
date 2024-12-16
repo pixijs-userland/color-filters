@@ -31,7 +31,7 @@ vec3 blurMap() {
     //read out the texels
     for (int i=-kSize; i <= kSize; ++i){
         for (int j=-kSize; j <= kSize; ++j){
-            final_colour += kernel[kSize+j] * kernel[kSize+i] * texture2D(uTexture, (vTextureCoord.xy + vec2(float(i),float(j))*uSize)).rgb;
+            final_colour += kernel[kSize+j] * kernel[kSize+i] * texture(uTexture, (vTextureCoord.xy + vec2(float(i),float(j))*uSize)).rgb;
         }
     }
     return vec3(final_colour/(Z*Z));
@@ -43,7 +43,7 @@ float luma(vec3 color) {
 
 void main() {
 
-    vec4 base = texture2D(uTexture, vTextureCoord);
+    vec4 base = texture(uTexture, vTextureCoord);
     vec3 color = blurMap();
 
     color = vec3(luma(color));

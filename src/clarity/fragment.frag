@@ -50,7 +50,7 @@ vec3 blurMap() {
     //read out the texels
     for (int i=-kSize; i <= kSize; ++i){
         for (int j=-kSize; j <= kSize; ++j){
-            final_colour += kernel[kSize+j] * kernel[kSize+i] * texture2D(uTexture, (vTextureCoord.xy + vec2(float(i),float(j))*px)).rgb;
+            final_colour += kernel[kSize+j] * kernel[kSize+i] * texture(uTexture, (vTextureCoord.xy + vec2(float(i),float(j))*px)).rgb;
         }
     }
     return vec3(final_colour/(Z*Z));
@@ -58,7 +58,7 @@ vec3 blurMap() {
 
 void main() {
 
-    vec4 base4 = texture2D(uTexture, vTextureCoord.xy);
+    vec4 base4 = texture(uTexture, vTextureCoord.xy);
 
     vec3 blurMap = blurMap();
     vec3 base = base4.rgb;

@@ -10,8 +10,8 @@ void main() {
     float bval = uValue / 255.0;
     float wval = (255.0 / (255.0 - uValue));
 
-    vec3 color = texture2D(uTexture, vTextureCoord).rgb;
+    vec3 color = texture(uTexture, vTextureCoord).rgb;
     color = color * wval - (bval *  wval);
 
-    finalColor = vec4(color, texture2D(uTexture, vTextureCoord).a);
+    finalColor = vec4(color, texture(uTexture, vTextureCoord).a);
 }

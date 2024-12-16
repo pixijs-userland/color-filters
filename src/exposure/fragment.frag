@@ -35,7 +35,7 @@ vec3 setHue(in vec3 res, in vec3 base) {
     return hsv2rgb(vec3(hsv.x, res_hsv.y, res_hsv.z));
 }
 void main() {
-    lowp vec4 col = texture2D(uTexture, vTextureCoord.xy);
+    lowp vec4 col = texture(uTexture, vTextureCoord.xy);
     vec3 base = col.rgb * matRGBtoROMM;
     float a = abs(uValue) * col.a + epsilon;
     float v = pow(2.0, a*2.0+1.0)-2.0;

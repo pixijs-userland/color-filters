@@ -11,18 +11,18 @@ void main() {
 
     // mess of for loops due to gpu compiler/hardware limitations
     int j=-2;
-    for( int i=-2; i<=2; i++) sum+=texture2D(uTexture,vTextureCoord+vec2(i,j)*uSize);
+    for( int i=-2; i<=2; i++) sum+=texture(uTexture,vTextureCoord+vec2(i,j)*uSize);
     j=-1;
-    for( int i=-2; i<=2; i++) sum+=texture2D(uTexture,vTextureCoord+vec2(i,j)*uSize);
+    for( int i=-2; i<=2; i++) sum+=texture(uTexture,vTextureCoord+vec2(i,j)*uSize);
     j=0;
-    for( int i=-2; i<=2; i++) sum+=texture2D(uTexture,vTextureCoord+vec2(i,j)*uSize);
+    for( int i=-2; i<=2; i++) sum+=texture(uTexture,vTextureCoord+vec2(i,j)*uSize);
     j=1;
-    for( int i=-2; i<=2; i++) sum+=texture2D(uTexture,vTextureCoord+vec2(i,j)*uSize);
+    for( int i=-2; i<=2; i++) sum+=texture(uTexture,vTextureCoord+vec2(i,j)*uSize);
     j=2;
-    for( int i=-2; i<=2; i++) sum+=texture2D(uTexture,vTextureCoord+vec2(i,j)*uSize);
+    for( int i=-2; i<=2; i++) sum+=texture(uTexture,vTextureCoord+vec2(i,j)*uSize);
     sum/=25.0;
 
-    finalColor= texture2D(uTexture, vTextureCoord);
+    finalColor= texture(uTexture, vTextureCoord);
 
     // use the blurred colour if it's bright enough
     if (length(sum) > thresh) {

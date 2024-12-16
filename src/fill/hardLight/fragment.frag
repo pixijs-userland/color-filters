@@ -19,6 +19,6 @@ vec3 blendHardLight(vec3 base, vec3 blend, float opacity) {
 }
 
 void main() {
-    vec4 base = texture2D(uTexture, vTextureCoord.xy);
+    vec4 base = texture(uTexture, vTextureCoord.xy);
     finalColor = vec4(blendHardLight(base.rgb, uFillColor.rgb, uValue), base.a);
 }

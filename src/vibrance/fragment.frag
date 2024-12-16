@@ -7,7 +7,7 @@ uniform float uValue;
 
 void main() {
 
-    vec4 col = texture2D(uTexture, vTextureCoord.xy);
+    vec4 col = texture(uTexture, vTextureCoord.xy);
     vec3 color = col.rgb;
 
     float luminance = color.r*0.299 + color.g*0.587 + color.b*0.114;
